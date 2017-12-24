@@ -1,49 +1,26 @@
-# Test Kudert
+# App Kudert
 
-Esta app ordena horarios para Certificación de Kudert tomando en consideracion el tiempo en minutos, se tomo como lenguaje de programacion para el modelo y logica javascript.
+Esta app es un ejercicio de evaluacion kudert, que se basa en ordena horarios para Certificación tomando en consideracion el tiempo en minutos, el lenguaje de programacion para el modelo y logica es javascript.
 
 * [Instalación](#instalación)
-    * [Agregar Repositorio](#agregar-repositorio)
-    * [Requerir los Package](#requerir-los-package)
-    * [Autor](#Autor)
+* [Requerir](#requerir)
+* [Autor](#Autor)
 
-## Instalación
-
-Utilizaremos composer para dicha instalación:
-
-### Agregar Repositorio
-Es necesario indicarle a composer donde se encuentra el repositorio de nuestro bundle, esto lo hacemos agregando las siguientes lineas al **composer.json** del proyecto.
-```json
+### Instalación
+Descargar la carpeta kudert del repositorio colocar en el directorio www o htdocs dependiendo del ambiente que se tenga, esta aplicacion no requiere de un interprete apache.
+```
 ...
-    "repositories": [
+    "repositorio": [
         {
-            "type": "vcs",
-            "url":  "https://git.smarter.com.ve/jgomez/CaseBundle.git"
+            "url":  "https://github.com/jjgomez29/kudert.git"
         }
     ],
 ...
 ```
 ### Requerir los Package
 
-En un terminal, nos vamos a la carpeta base del proyecto y ejecutamos los siguientes comandos.
+Se requiere de un archivo txt que se encuentra dentro del directorio raiz del proyecto, llamado datos.txt en dicho archivo se colocan la cantidad de cursos su tiempo de duración en minutos y la cantidad de cursos registrados.
 
-```bash
-composer require  jgomez/taskbundle "dev-master"
-```
-
-### Registramos el Bundle
-
-Con el editor de texto de su preferencia editamos el archivo **app/AppKernel.php**, y agregamos las siguientes lineas.
-
-```php
-    public function registerBundles()
-    {
-        $bundles = array(
-            ...
-            new CenposCommcenter\CaseBundle\CenposCommcenterCaseBundle(),
-        );
-        ...
-    }
 ```
 
 ### Autor

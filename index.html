@@ -1,58 +1,172 @@
-<!DOCTYPE html>
+<html>
 
-<html lang="es">
+ <head>
+  <script src="jquery-1.10.2.js"></script>
+  <script src="datos.txt"></script>
+  <script type="text/javascript">
+            ////funciones para calcular el tiempo////
+            function padNmb(nStr, nLen) {
+                var sRes = String(nStr);
+                var sCeros = "0000000000";
+                return sCeros.substr(0, nLen - sRes.length) + sRes;
+            }
+ 
+            function stringToSeconds(tiempo) {
+                var sep1 = tiempo.indexOf(":");
+                var sep2 = tiempo.lastIndexOf(":");
+                var hor = tiempo.substr(0, sep1);
+                var min = tiempo.substr(sep1 + 1, sep2 - sep1 - 1);
+                var sec = tiempo.substr(sep2 + 1);
+                return (Number(sec) + (Number(min) * 60) + (Number(hor) * 3600));
+            }
+ 
+            function secondsToTime(secs) {
+                var hor = Math.floor(secs / 3600);
+                var min = Math.floor((secs - (hor * 3600)) / 60);
+                var sec = secs - (hor * 3600) - (min * 60);
+                return padNmb(hor, 2) + ":" + padNmb(min, 2) + ":" + padNmb(sec, 2);
+            }
+ 
+            function substractTimes(t1, t2) {
+                var secs1 = stringToSeconds(t1);
+                var secs2 = stringToSeconds(t2);
+                var secsDif = secs1 + secs2;
+                return secondsToTime(secsDif);
+            }
+            ////////////////////////////////////////
+             function cargarDatos(){
 
-<head>
-<title>Certificación de Kudert</title>
-<meta charset="utf-8" />
-<link rel="stylesheet" href="estilos.css" />
-<link rel="shortcut icon" href="/favicon.ico" />
-<link rel="alternate" title="Pozolería RSS" type="application/rss+xml" href="/feed.rss" />
-</head>
+              var inicio='09:00:00';
+              var Curso;
+              var totalminutos=0;
+              var primerTurnodia1=false;
+              var segundoTurnodia1=false;
+              var primerTurnodia2=false;
+              var segundoTurnodia2=false;
+           
+               for (var i = 1; i <= Total.replace(/[^\d]/g, ''); i++) {
 
-<body>
-    <header>
-       <h1>Certificación de Kudert</h1>
-    </header>
-    <section>
-       <article>
-           <h2>Registrar Entrada</h2>
-           <p><label>Ingresar Archivo Txt:</label></br>
-           <input type="file" id="file-input" />
-          <h3>Salida:</h3>
-           <pre id="contenido-archivo"></pre>
-           </p>
-       </article>
-    </section>
-   <!-- <aside>
-       <h3>Salida</h3>
-           <p>contenido</p>
-    </aside>-->
-    <footer>
-        Creado Jhonny Gomez
-    </footer>
-</body>
+                
+                Curso="Curso"+i;
+                var minutos=eval(Curso).replace(/[^\d]/g, '');
+                totalminutos+=parseInt(minutos);
+               
+               //Inicar Orden del DIA 1
+              if(totalminutos<=420){
+               
+               //Turno Mañana//
+               if(totalminutos <= 180){
+    
+                if(primerTurnodia1==false){
+               
+                $('#item').append('<tr><td>Dia 1</td><td></td><td></td></tr>');
+                var horario=inicio;
+                var primerTurnodia1=true;
+               
+                }else{
+
+                var horario=next;
+
+                }
+              
+                 next=substractTimes(horario,'00:'+minutos+':00');
+                 $('#item').append('<tr><td>'+horario+'AM</td><td></td><td>'+eval(Curso)+'</td></tr>');
+
+              }
+
+              //Almuerzo//
+               if(totalminutos == 180){
+                 $('#item').append('<tr><td>12:00:00AM</td><td></td><td>Almuerzo</td></tr>');
+              }
+
+               //Turno Tarde//
+              if(totalminutos > 180 && totalminutos <=420){
+
+                if(segundoTurnodia1==false){
+                var horario='01:00:00';
+
+                }else{
+                  
+                var horario=next;
+
+                }
+                next=substractTimes(horario,'00:'+minutos+':00');
+                $('#item').append('<tr><td>'+horario+'PM</td><td></td><td>'+eval(Curso)+'</td></tr>');
+                var segundoTurnodia1= true;
+      
+              }
+
+              //Networking Event//
+               if(totalminutos == 420){
+                $('#item').append('<tr><td>05:00:00PM</td><td></td><td>Networking Event</td></tr>');
+              }
+
+                //alert(next);
+
+              }//FIN DIA 1
+
+               //Inicar Orden del DIA 2
+              if(totalminutos>420){
+
+               //Turno Mañana//
+               if(totalminutos >= 420 && totalminutos<=600){
+    
+                if(primerTurnodia2==false){
+                
+                $('#item').append('<tr><td>Dia 2</td><td></td><td></td></tr>');
+                var horario=inicio;
+                var primerTurnodia2=true;
+               
+                }else{
+
+                var horario=next;
+
+                }
+              
+                 next=substractTimes(horario,'00:'+minutos+':00');
+                 $('#item').append('<tr><td>'+horario+'AM</td><td></td><td>'+eval(Curso)+'</td></tr>');
+
+              }
+
+              //Almuerzo//
+               if(totalminutos == 600){
+                 $('#item').append('<tr><td>12:00:00AM</td><td></td><td>Almuerzo</td></tr>');
+              }
+
+               //Turno Tarde//
+              if(totalminutos > 600 && totalminutos <=840){
+
+                if(segundoTurnodia2==false){
+                var horario='01:00:00';
+                var segundoTurnodia2=true;
+
+                }else{
+                  
+                var horario=next;
+
+                }
+                next=substractTimes(horario,'00:'+minutos+':00');
+                $('#item').append('<tr><td>'+horario+'PM</td><td></td><td>'+eval(Curso)+'</td></tr>');
+                var turno= true;
+      
+              }
+
+              //Networking Event//
+               if(totalminutos == 840){
+                $('#item').append('<tr><td>05:00:00PM</td><td></td><td>Networking Event</td></tr>');
+              }
+
+                //alert(next);
+
+              }//FIN DIA 2
+
+            }    
+        }
+  </script>
+
+ </head>
+ <body onload="cargarDatos()">
+ <h1>Curso Registrados</h1><br/><br/>
+ <div id="item"></div>
+ </body>
 </html>
-<script src="datos.txt"></script>
-<script type="text/javascript">
-function leerArchivo(e) {
-  var archivo = e.target.files[0];
-  if (!archivo) {
-    return;
-  }
-  var lector = new FileReader();
-  lector.onload = function(e) {
-    var contenido = e.target.result;
-    mostrarContenido(contenido);
-  };
-  lector.readAsText(archivo);
-}
-
-function mostrarContenido(contenido) {
-  var elemento = document.getElementById('contenido-archivo');
-  elemento.innerHTML = contenido;
-}
-
-document.getElementById('file-input')
-  .addEventListener('change', leerArchivo, false);
-</script>

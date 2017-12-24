@@ -1,9 +1,20 @@
-Curso1="Administrador de sistemas 30min";
-Curso2="Programador en Java 60min";
-Curso3="Content Manager 30 min";
-Curso4="Tecnico Help nivel uno 30min";
-Curso5="Tecnico Help nivel dos 30min";
-Curso6="Tecnico Help nivel tres 30min";
-Curso7="Tecnico Help nivel cuatro 120min";
-Curso8="Tecnico Help nivel cinco 90min";
-Total="8";
+////Cursos//////
+
+Curso1="Administrador de sistemas  Duracion=30min";
+Curso2="Programador en Java Duracion=60min";
+Curso3="Content Manager Duracion=30min";
+Curso4="Tecnico Help nivel uno Duracion=30min";
+Curso5="Tecnico Help nivel dos Duracion=30min";
+Curso6="Tecnico Help nivel tres Duracion=30min";
+Curso7="Tecnico Help nivel cuatro Duracion=120min";
+Curso8="Tecnico Help nivel cinco Duracion=90min";
+Curso9="Administrador de sistemas Duracion=30min";
+Curso10="Programador en Java Duracion=60min";
+Curso11="Content Manager Duracion=30min";
+Curso12="Tecnico Help nivel Duracion=uno30min";
+Curso13="Tecnico Help nivel Duracion=dos30min";
+Curso14="Tecnico Help nivel tres Duracion=30min";
+Curso15="Tecnico Help nivel cuatro Duracion=120min";
+Curso16="Tecnico Help nivel cinco Duracion=90min";
+
+Total="16"; ////Total Cursos 
