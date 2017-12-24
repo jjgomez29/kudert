@@ -1,13 +1,13 @@
 # App Kudert
 
-Esta app es un ejercicio de evaluacion kudert, que se basa en ordena horarios para Certificación tomando en consideracion el tiempo en minutos, el lenguaje de programacion para el modelo y logica es javascript.
+Esta app es un ejercicio de evaluacion kudert, que se basa en ordenar horarios para Certificación tomando en consideracion el tiempo en minutos, el lenguaje de programacion usado para el modelo y logica es javascript.
 
-* [Instalación](#instalación)
-* [Requerir](#requerir)
+* [Instalación](#Instalación)
+* [Requerir](#Requerir)
 * [Autor](#Autor)
 
 ### Instalación
-Descargar la carpeta kudert del repositorio colocar en el directorio www o htdocs dependiendo del ambiente que se tenga, esta aplicacion no requiere de un interprete apache.
+Descargar la carpeta kudert del repositorio, colocar en el directorio www o htdocs dependiendo del ambiente que se tenga, esta aplicacion no requiere de un interprete apache.
 ```
 ...
     "repositorio": [
@@ -19,7 +19,7 @@ Descargar la carpeta kudert del repositorio colocar en el directorio www o htdoc
 ```
 ### Requerir los Package
 
-Se requiere de un archivo txt que se encuentra dentro del directorio raiz del proyecto, llamado datos.txt en dicho archivo se colocan la cantidad de cursos su tiempo de duración en minutos y la cantidad de cursos registrados.
+Se requiere de un archivo txt que se encuentra dentro del directorio raiz del proyecto, llamado datos.txt en dicho archivo se registran la cantidad de cursos y su tiempo de duración en minutos. Tomando en cuenta el formato de ejemplo dentro del archivo.
 
 ```
 

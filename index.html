@@ -34,139 +34,144 @@
                 return secondsToTime(secsDif);
             }
             ////////////////////////////////////////
-             function cargarDatos(){
+             function CargarDatos(){
 
-              var inicio='09:00:00';
+              var Inicio='09:00:00';
               var Curso;
-              var totalminutos=0;
-              var primerTurnodia1=false;
-              var segundoTurnodia1=false;
+              var TotalMinutos=0;
+              var PrimerTurnodia1=false;
+              var SegundoTurnodia1=false;
               var primerTurnodia2=false;
-              var segundoTurnodia2=false;
+              var SegundoTurnodia2=false;
            
                for (var i = 1; i <= Total.replace(/[^\d]/g, ''); i++) {
-
                 
                 Curso="Curso"+i;
-                var minutos=eval(Curso).replace(/[^\d]/g, '');
-                totalminutos+=parseInt(minutos);
+                var Minutos=eval(Curso).replace(/[^\d]/g, '');
+                TotalMinutos+=parseInt(Minutos);
+
+              ///reglas de validacion///
+              if(TotalMinutos>840){
+                alert('Disculpe Excedido el limite de Minutos para los 2 dias de curso');
+                window.location='index.html';
+              }else if(Minutos>180 && TotalMinutos==0){
+                alert('Disculpe Excedido el limite de Minutos por Turno de la mañana');
+                window.location='index.html';
+
+              }else if(Minutos>240 && TotalMinutos!=0){
+                alert('Disculpe Excedido el limite de Minutos por Turno de la tarde');
+                window.location='index.html';
+
+              }else{
+  
+                //Iniciar Orden del DIA 1
+                if(TotalMinutos<=420){
                
-               //Inicar Orden del DIA 1
-              if(totalminutos<=420){
-               
-               //Turno Mañana//
-               if(totalminutos <= 180){
+                //Turno Mañana//
+                if(TotalMinutos <= 180){
     
-                if(primerTurnodia1==false){
-               
-                $('#item').append('<tr><td>Dia 1</td><td></td><td></td></tr>');
-                var horario=inicio;
-                var primerTurnodia1=true;
+                if(PrimerTurnodia1==false){
+
+                  $('#item').append('<tr><td>Dia 1</td><td></td><td></td></tr>');
+                  var Horario=Inicio;
+                  var PrimerTurnodia1=true;
                
                 }else{
 
-                var horario=next;
+                  var Horario=SiguienteHorario;
 
                 }
               
-                 next=substractTimes(horario,'00:'+minutos+':00');
-                 $('#item').append('<tr><td>'+horario+'AM</td><td></td><td>'+eval(Curso)+'</td></tr>');
-
+                 SiguienteHorario=substractTimes(Horario,'00:'+Minutos+':00');
+                 $('#item').append('<tr><td>'+Horario+'AM</td><td></td><td>'+eval(Curso)+'</td></tr>');
               }
 
-              //Almuerzo//
-               if(totalminutos == 180){
-                 $('#item').append('<tr><td>12:00:00AM</td><td></td><td>Almuerzo</td></tr>');
-              }
+                //Turno Tarde//
+                if(TotalMinutos > 180 && TotalMinutos <=420){
 
-               //Turno Tarde//
-              if(totalminutos > 180 && totalminutos <=420){
-
-                if(segundoTurnodia1==false){
-                var horario='01:00:00';
+                  if(SegundoTurnodia1==false){
+                  //almuerzo
+                  $('#item').append('<tr><td>12:00:00AM</td><td></td><td>Almuerzo</td></tr>');
+                  var Horario='01:00:00';
+                  var SegundoTurnodia1= true;
 
                 }else{
                   
-                var horario=next;
+                  var Horario=SiguienteHorario;
 
                 }
-                next=substractTimes(horario,'00:'+minutos+':00');
-                $('#item').append('<tr><td>'+horario+'PM</td><td></td><td>'+eval(Curso)+'</td></tr>');
-                var segundoTurnodia1= true;
-      
+
+                  SiguienteHorario=substractTimes(Horario,'00:'+Minutos+':00');
+                  $('#item').append('<tr><td>'+Horario+'PM</td><td></td><td>'+eval(Curso)+'</td></tr>');
+
               }
 
-              //Networking Event//
-               if(totalminutos == 420){
-                $('#item').append('<tr><td>05:00:00PM</td><td></td><td>Networking Event</td></tr>');
+                //Networking Event//
+                if(TotalMinutos == 420){
+                  $('#item').append('<tr><td>05:00:00PM</td><td></td><td>Networking Event</td></tr>');
               }
 
-                //alert(next);
+          }//FIN DIA 1
 
-              }//FIN DIA 1
+               //Iniciar Orden del DIA 2
+              if(TotalMinutos>420){
 
-               //Inicar Orden del DIA 2
-              if(totalminutos>420){
-
-               //Turno Mañana//
-               if(totalminutos >= 420 && totalminutos<=600){
+                //Turno Mañana//
+                if(TotalMinutos >= 420 && TotalMinutos<=600){
     
                 if(primerTurnodia2==false){
                 
-                $('#item').append('<tr><td>Dia 2</td><td></td><td></td></tr>');
-                var horario=inicio;
-                var primerTurnodia2=true;
+                  $('#item').append('<tr><td>Dia 2</td><td></td><td></td></tr>');
+                  var Horario=Inicio;
+                  var primerTurnodia2=true;
                
                 }else{
 
-                var horario=next;
+                  var Horario=SiguienteHorario;
 
                 }
               
-                 next=substractTimes(horario,'00:'+minutos+':00');
-                 $('#item').append('<tr><td>'+horario+'AM</td><td></td><td>'+eval(Curso)+'</td></tr>');
+                 SiguienteHorario=substractTimes(Horario,'00:'+Minutos+':00');
+                 $('#item').append('<tr><td>'+Horario+'AM</td><td></td><td>'+eval(Curso)+'</td></tr>');
 
-              }
-
-              //Almuerzo//
-               if(totalminutos == 600){
-                 $('#item').append('<tr><td>12:00:00AM</td><td></td><td>Almuerzo</td></tr>');
               }
 
                //Turno Tarde//
-              if(totalminutos > 600 && totalminutos <=840){
+                if(TotalMinutos > 600 && TotalMinutos <=840){
 
-                if(segundoTurnodia2==false){
-                var horario='01:00:00';
-                var segundoTurnodia2=true;
+                if(SegundoTurnodia2==false){
+                  //almuerzo
+                  $('#item').append('<tr><td>12:00:00AM</td><td></td><td>Almuerzo</td></tr>');
+                  var Horario='01:00:00';
+                  var SegundoTurnodia2=true;
 
                 }else{
                   
-                var horario=next;
+                  var Horario=SiguienteHorario;
 
                 }
-                next=substractTimes(horario,'00:'+minutos+':00');
-                $('#item').append('<tr><td>'+horario+'PM</td><td></td><td>'+eval(Curso)+'</td></tr>');
-                var turno= true;
+
+                  SiguienteHorario=substractTimes(Horario,'00:'+Minutos+':00');
+                  $('#item').append('<tr><td>'+Horario+'PM</td><td></td><td>'+eval(Curso)+'</td></tr>');
       
               }
 
-              //Networking Event//
-               if(totalminutos == 840){
+                //Networking Event//
+                if(TotalMinutos == 840){
                 $('#item').append('<tr><td>05:00:00PM</td><td></td><td>Networking Event</td></tr>');
               }
 
-                //alert(next);
+          }//FIN DIA 2
 
-              }//FIN DIA 2
-
-            }    
         }
-  </script>
 
- </head>
- <body onload="cargarDatos()">
- <h1>Curso Registrados</h1><br/><br/>
- <div id="item"></div>
- </body>
+      }    
+  }
+</script>
+
+</head>
+<body onload="CargarDatos()">
+<h1 align="center">Curso Registrados</h1><br/><br/>
+<div id="item"></div>
+</body>
 </html>

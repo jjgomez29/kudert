@@ -1,20 +1,32 @@
-////Cursos//////
+////////////////////LEER//////////////////////
+// Utilizar el mismo formato del archivo
+// Limite Turno mañana: 180 min
+// Limite Turno Tarde: 240 min
+// Limite Por dia: 420 min
+// ejemplo formato:
+// Curso1="Administrador de sistemas  Duracion=180min";
+// Total="1"; 
+/////////////////////////////////////////////
 
-Curso1="Administrador de sistemas  Duracion=30min";
-Curso2="Programador en Java Duracion=60min";
-Curso3="Content Manager Duracion=30min";
-Curso4="Tecnico Help nivel uno Duracion=30min";
-Curso5="Tecnico Help nivel dos Duracion=30min";
-Curso6="Tecnico Help nivel tres Duracion=30min";
-Curso7="Tecnico Help nivel cuatro Duracion=120min";
-Curso8="Tecnico Help nivel cinco Duracion=90min";
-Curso9="Administrador de sistemas Duracion=30min";
-Curso10="Programador en Java Duracion=60min";
-Curso11="Content Manager Duracion=30min";
-Curso12="Tecnico Help nivel Duracion=uno30min";
-Curso13="Tecnico Help nivel Duracion=dos30min";
-Curso14="Tecnico Help nivel tres Duracion=30min";
-Curso15="Tecnico Help nivel cuatro Duracion=120min";
-Curso16="Tecnico Help nivel cinco Duracion=90min";
+//////////////CURSOS//////////////////////////
+Curso1="Introduccion a los perfiles Kudert  Duracion=60min";
+Curso2="Metodologia DISC  Duracion=45min";
+Curso3="Examen VELNA y sus potencialidades  Duracion=30min";
+Curso4="Analisis del perfil psicologico de tu empresa  Duracion=45min";
+Curso5="Como ser mas eficiente en el proceso de contratacion  Duracion=45min";
+Curso6="Presentacion del equipo de I+D  Duracion=5min";
+Curso7="Naturaleza de la psicologia humana Duracion=60min";
+Curso8="Anatomia del perfil de un lider Duracion=45min";
+Curso9="Cual es el perfil del vendedor ideal para mi negocio  Duracion=30min";
+Curso10="Psicologia al dia  Duracion=30min";
+Curso11="Donde termina el proceso de contratacion  Duracion=45min";
+Curso12="Respaldo teorico de Kudert  Duracion=60min";
+Curso13="Principales retos de las empresas actuales en los procesos de contratacion  Duracion=60min";
+Curso14="Que puedo hacer con las Kudert Cards  Duracion=45min";
+Curso15="Practica de la plataforma Kudert  Duracion=30min";
+Curso16="Como ayuda Kudert a mejorar el ambiente laboral   Duracion=30min";
+Curso17="Metodologia DISC aplicada a Ecuador  Duracion=60min";
+Curso18="Ziembra, un emprendimiento ecuatoriano. Historia de la empresa  Duracion=30min";
+Curso19="Ejercicios practicos de la metologia DISC  Duracion=30min";
 
-Total="16"; ////Total Cursos 
+Total="19"; ////Total Cursos
