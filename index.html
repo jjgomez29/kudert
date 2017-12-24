@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+<title>Certificación de Kudert</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="estilos.css" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="alternate" title="Pozolería RSS" type="application/rss+xml" href="/feed.rss" />
+</head>
+
+<body>
+    <header>
+       <h1>Certificación de Kudert</h1>
+    </header>
+    <section>
+       <article>
+           <h2>Registrar Entrada</h2>
+           <p><label>Ingresar Archivo Txt:</label></br>
+           <input type="file" id="file-input" />
+          <h3>Salida:</h3>
+           <pre id="contenido-archivo"></pre>
+           </p>
+       </article>
+    </section>
+   <!-- <aside>
+       <h3>Salida</h3>
+           <p>contenido</p>
+    </aside>-->
+    <footer>
+        Creado Jhonny Gomez
+    </footer>
+</body>
+</html>
+<script src="datos.txt"></script>
+<script type="text/javascript">
+function leerArchivo(e) {
+  var archivo = e.target.files[0];
+  if (!archivo) {
+    return;
+  }
+  var lector = new FileReader();
+  lector.onload = function(e) {
+    var contenido = e.target.result;
+    mostrarContenido(contenido);
+  };
+  lector.readAsText(archivo);
+}
+
+function mostrarContenido(contenido) {
+  var elemento = document.getElementById('contenido-archivo');
+  elemento.innerHTML = contenido;
+}
+
+document.getElementById('file-input')
+  .addEventListener('change', leerArchivo, false);
+</script>

@@ -1,0 +1,9 @@
+Curso1="Administrador de sistemas 30min";
+Curso2="Programador en Java 60min";
+Curso3="Content Manager 30 min";
+Curso4="Tecnico Help nivel uno 30min";
+Curso5="Tecnico Help nivel dos 30min";
+Curso6="Tecnico Help nivel tres 30min";
+Curso7="Tecnico Help nivel cuatro 120min";
+Curso8="Tecnico Help nivel cinco 90min";
+Total="8";
