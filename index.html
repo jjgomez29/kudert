@@ -51,16 +51,21 @@
                 TotalMinutos+=parseInt(Minutos);
 
               ///reglas de validacion///
-              if(TotalMinutos>840){
-                alert('Disculpe Excedido el limite de Minutos para los 2 dias de curso');
-                window.location='index.html';
-              }else if(Minutos>180 && TotalMinutos==0){
-                alert('Disculpe Excedido el limite de Minutos por Turno de la mañana');
-                window.location='index.html';
+              if(TotalMinutos>840 || Minutos>840){
+                alert('Disculpe Excedido el limite de Minutos para los 2 dias de curso! Verifique archivo Txt');
+                window.location='datos.txt';
 
-              }else if(Minutos>240 && TotalMinutos!=0){
-                alert('Disculpe Excedido el limite de Minutos por Turno de la tarde');
-                window.location='index.html';
+              }else if(Minutos>180 && TotalMinutos==0){
+                alert('Disculpe Excedido el limite de Minutos por Turno de la mañana! Verifique archivo Txt');
+                window.location='datos.txt';
+
+              }else if(Minutos>180 && TotalMinutos==0){
+                alert('Disculpe Excedido el limite de Minutos por Turno de la mañana! Verifique archivo Txt');
+                window.location='datos.txt';
+
+              }else if(Minutos>420){
+                alert('Disculpe Excedido el limite de Minutos por cada dia de Curso! Verifique archivo Txt');
+                window.location='datos.txt';
 
               }else{
   
@@ -71,7 +76,7 @@
                 if(TotalMinutos <= 180){
     
                 if(PrimerTurnodia1==false){
-
+                  //Dia 1
                   $('#item').append('<tr><td>Dia 1</td><td></td><td></td></tr>');
                   var Horario=Inicio;
                   var PrimerTurnodia1=true;
@@ -106,11 +111,6 @@
 
               }
 
-                //Networking Event//
-                if(TotalMinutos == 420){
-                  $('#item').append('<tr><td>05:00:00PM</td><td></td><td>Networking Event</td></tr>');
-              }
-
           }//FIN DIA 1
 
                //Iniciar Orden del DIA 2
@@ -120,7 +120,9 @@
                 if(TotalMinutos >= 420 && TotalMinutos<=600){
     
                 if(primerTurnodia2==false){
-                
+                   //Networking Event//
+                  $('#item').append('<tr><td>05:00:00PM</td><td></td><td>Networking Event</td></tr>');
+                   //Dia 2//
                   $('#item').append('<tr><td>Dia 2</td><td></td><td></td></tr>');
                   var Horario=Inicio;
                   var primerTurnodia2=true;
@@ -157,7 +159,7 @@
               }
 
                 //Networking Event//
-                if(TotalMinutos == 840){
+                if(TotalMinutos == 840 || i==Total.replace(/[^\d]/g, '')){
                 $('#item').append('<tr><td>05:00:00PM</td><td></td><td>Networking Event</td></tr>');
               }
 

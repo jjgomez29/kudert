@@ -17,7 +17,7 @@ Descargar la carpeta kudert del repositorio, colocar en el directorio www o htdo
     ],
 ...
 ```
-### Requerir los Package
+### Requerir Archivo Txt
 
 Se requiere de un archivo txt que se encuentra dentro del directorio raiz del proyecto, llamado datos.txt en dicho archivo se registran la cantidad de cursos y su tiempo de duración en minutos. Tomando en cuenta el formato de ejemplo dentro del archivo.
 
