@@ -2,7 +2,7 @@
 
 Esta app es un ejercicio de evaluacion kudert, que se basa en ordenar horarios para Certificación tomando en consideracion el tiempo en minutos, el lenguaje de programacion usado para el modelo y logica es javascript.
 
-la aplicacion no posee ningun tipo de estilo o diseño es un test basico.
+La aplicacion no posee ningun tipo de estilo o diseño (Test basico).
 
 * [Instalación](#Instalación)
 * [Requerir](#Requerir)
