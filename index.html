@@ -37,7 +37,7 @@
              function CargarDatos(){
 
               var Inicio='09:00:00';
-              var Curso;
+              var Certificacion;
               var TotalMinutos=0;
               var PrimerTurnodia1=false;
               var SegundoTurnodia1=false;
@@ -46,13 +46,13 @@
            
                for (var i = 1; i <= Total.replace(/[^\d]/g, ''); i++) {
                 
-                Curso="Curso"+i;
-                var Minutos=eval(Curso).replace(/[^\d]/g, '');
+                Certificacion="Certificacion"+i;
+                var Minutos=eval(Certificacion).replace(/[^\d]/g, '');
                 TotalMinutos+=parseInt(Minutos);
 
               ///reglas de validacion///
               if(TotalMinutos>840 || Minutos>840){
-                alert('Disculpe Excedido el limite de Minutos para los 2 dias de curso! Verifique archivo Txt');
+                alert('Disculpe Excedido el limite de Minutos para los 2 dias de Certificacion! Verifique archivo Txt');
                 window.location='datos.txt';
 
               }else if(Minutos>180 && TotalMinutos==0){
@@ -64,7 +64,7 @@
                 window.location='datos.txt';
 
               }else if(Minutos>420){
-                alert('Disculpe Excedido el limite de Minutos por cada dia de Curso! Verifique archivo Txt');
+                alert('Disculpe Excedido el limite de Minutos por cada dia de Certificacion! Verifique archivo Txt');
                 window.location='datos.txt';
 
               }else{
@@ -88,7 +88,7 @@
                 }
               
                  SiguienteHorario=substractTimes(Horario,'00:'+Minutos+':00');
-                 $('#item').append('<tr><td>'+Horario+'AM</td><td></td><td>'+eval(Curso)+'</td></tr>');
+                 $('#item').append('<tr><td>'+Horario+'AM</td><td></td><td>'+eval(Certificacion)+'</td></tr>');
               }
 
                 //Turno Tarde//
@@ -107,7 +107,7 @@
                 }
 
                   SiguienteHorario=substractTimes(Horario,'00:'+Minutos+':00');
-                  $('#item').append('<tr><td>'+Horario+'PM</td><td></td><td>'+eval(Curso)+'</td></tr>');
+                  $('#item').append('<tr><td>'+Horario+'PM</td><td></td><td>'+eval(Certificacion)+'</td></tr>');
 
               }
 
@@ -134,7 +134,7 @@
                 }
               
                  SiguienteHorario=substractTimes(Horario,'00:'+Minutos+':00');
-                 $('#item').append('<tr><td>'+Horario+'AM</td><td></td><td>'+eval(Curso)+'</td></tr>');
+                 $('#item').append('<tr><td>'+Horario+'AM</td><td></td><td>'+eval(Certificacion)+'</td></tr>');
 
               }
 
@@ -154,7 +154,7 @@
                 }
 
                   SiguienteHorario=substractTimes(Horario,'00:'+Minutos+':00');
-                  $('#item').append('<tr><td>'+Horario+'PM</td><td></td><td>'+eval(Curso)+'</td></tr>');
+                  $('#item').append('<tr><td>'+Horario+'PM</td><td></td><td>'+eval(Certificacion)+'</td></tr>');
       
               }
 
@@ -173,7 +173,7 @@
 
 </head>
 <body onload="CargarDatos()">
-<h1 align="center">Curso Registrados</h1><br/><br/>
+<h1 align="center">Certificacion Registrados</h1><br/><br/>
 <div id="item"></div>
 </body>
 </html>

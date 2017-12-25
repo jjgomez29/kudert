@@ -4,29 +4,29 @@
 // Limite Turno Tarde: 240 min
 // Limite Por dia: 420 min
 // ejemplo formato:
-// Curso1="Administrador de sistemas  Duracion=180min";
+// Certificacion1="Administrador de sistemas  Duracion=180min";
 // Total="1"; 
 /////////////////////////////////////////////
 
 //////////////CURSOS//////////////////////////
-Curso1="Introduccion a los perfiles Kudert  Duracion=60min";
-Curso2="Metodologia DISC  Duracion=45min";
-Curso3="Examen VELNA y sus potencialidades  Duracion=30min";
-Curso4="Analisis del perfil psicologico de tu empresa  Duracion=45min";
-Curso5="Como ser mas eficiente en el proceso de contratacion  Duracion=45min";
-Curso6="Presentacion del equipo de I+D  Duracion=5min";
-Curso7="Naturaleza de la psicologia humana Duracion=60min";
-Curso8="Anatomia del perfil de un lider Duracion=45min";
-Curso9="Cual es el perfil del vendedor ideal para mi negocio  Duracion=30min";
-Curso10="Psicologia al dia  Duracion=30min";
-Curso11="Donde termina el proceso de contratacion  Duracion=45min";
-Curso12="Respaldo teorico de Kudert  Duracion=60min";
-Curso13="Principales retos de las empresas actuales en los procesos de contratacion  Duracion=60min";
-Curso14="Que puedo hacer con las Kudert Cards  Duracion=45min";
-Curso15="Practica de la plataforma Kudert  Duracion=30min";
-Curso16="Como ayuda Kudert a mejorar el ambiente laboral   Duracion=30min";
-Curso17="Metodologia DISC aplicada a Ecuador  Duracion=60min";
-Curso18="Ziembra, un emprendimiento ecuatoriano. Historia de la empresa  Duracion=30min";
-Curso19="Ejercicios practicos de la metologia DISC  Duracion=30min";
+Certificacion1="Introduccion a los perfiles Kudert  Duracion=60min";
+Certificacion2="Metodologia DISC  Duracion=45min";
+Certificacion3="Examen VELNA y sus potencialidades  Duracion=30min";
+Certificacion4="Analisis del perfil psicologico de tu empresa  Duracion=45min";
+Certificacion5="Como ser mas eficiente en el proceso de contratacion  Duracion=45min";
+Certificacion6="Presentacion del equipo de I+D  Duracion=5min";
+Certificacion7="Naturaleza de la psicologia humana Duracion=60min";
+Certificacion8="Anatomia del perfil de un lider Duracion=45min";
+Certificacion9="Cual es el perfil del vendedor ideal para mi negocio  Duracion=30min";
+Certificacion10="Psicologia al dia  Duracion=30min";
+Certificacion11="Donde termina el proceso de contratacion  Duracion=45min";
+Certificacion12="Respaldo teorico de Kudert  Duracion=60min";
+Certificacion13="Principales retos de las empresas actuales en los procesos de contratacion  Duracion=60min";
+Certificacion14="Que puedo hacer con las Kudert Cards  Duracion=45min";
+Certificacion15="Practica de la plataforma Kudert  Duracion=30min";
+Certificacion16="Como ayuda Kudert a mejorar el ambiente laboral   Duracion=30min";
+Certificacion17="Metodologia DISC aplicada a Ecuador  Duracion=60min";
+Certificacion18="Ziembra, un emprendimiento ecuatoriano. Historia de la empresa  Duracion=30min";
+Certificacion19="Ejercicios practicos de la metologia DISC  Duracion=30min";
 
-Total="19"; ////Total Cursos
+Total="19"; ////Total Certificacion
