@@ -4,11 +4,11 @@
 // Limite Turno Tarde: 240 min
 // Limite Por dia: 420 min
 // ejemplo formato:
-// Certificacion1="Administrador de sistemas  Duracion=180min";
+// Certificacion1="Administrador de sistemas  Duracion=30min";
 // Total="1"; 
 /////////////////////////////////////////////
 
-//////////////CURSOS//////////////////////////
+//////////////Certificaciones//////////////////////////
 Certificacion1="Introduccion a los perfiles Kudert  Duracion=60min";
 Certificacion2="Metodologia DISC  Duracion=45min";
 Certificacion3="Examen VELNA y sus potencialidades  Duracion=30min";
@@ -29,4 +29,4 @@ Certificacion17="Metodologia DISC aplicada a Ecuador  Duracion=60min";
 Certificacion18="Ziembra, un emprendimiento ecuatoriano. Historia de la empresa  Duracion=30min";
 Certificacion19="Ejercicios practicos de la metologia DISC  Duracion=30min";
 
-Total="19"; ////Total Certificacion
+Total="19"; ////Total Certificaciones

@@ -59,7 +59,7 @@
                 alert('Disculpe Excedido el limite de Minutos por Turno de la mañana! Verifique archivo Txt');
                 window.location='datos.txt';
 
-              }else if(Minutos>180 && TotalMinutos==0){
+              }else if(Minutos>240 && TotalMinutos!=0){
                 alert('Disculpe Excedido el limite de Minutos por Turno de la mañana! Verifique archivo Txt');
                 window.location='datos.txt';
 
@@ -109,6 +109,12 @@
                   SiguienteHorario=substractTimes(Horario,'00:'+Minutos+':00');
                   $('#item').append('<tr><td>'+Horario+'PM</td><td></td><td>'+eval(Certificacion)+'</td></tr>');
 
+                  //Validar Limite de Tiempo
+                  if(SiguienteHorario>'05:00:00'){
+                  alert('Disculpe Excedido el limite de Minutos de Certificaciones en el Turno de la Tarde! Verifique archivo Txt');
+                  window.location='datos.txt';
+                  }
+
               }
 
           }//FIN DIA 1
@@ -155,6 +161,12 @@
 
                   SiguienteHorario=substractTimes(Horario,'00:'+Minutos+':00');
                   $('#item').append('<tr><td>'+Horario+'PM</td><td></td><td>'+eval(Certificacion)+'</td></tr>');
+
+                  //Validar Limite de Tiempo
+                  if(SiguienteHorario>'05:00:00'){
+                  alert('Disculpe Excedido el limite de Minutos de Certificaciones en el Turno de la Tarde! Verifique archivo Txt');
+                  window.location='datos.txt';
+                  }
       
               }
 
